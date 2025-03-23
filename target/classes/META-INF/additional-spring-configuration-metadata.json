@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "spring.mvc.servlet.dispatch-options-request",
+  "type": "java.lang.String",
+  "description": "A description for 'spring.mvc.servlet.dispatch-options-request'"
+}]}

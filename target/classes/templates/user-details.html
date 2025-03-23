@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+
+    <style>
+        /* Global Reset */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #DCD6F7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            background-color: #5C67F2;
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            background-color: #6A5ACD;
+            color: white;
+            padding: 40px;
+            width: 50%;
+            margin-top: 100px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Section titles */
+        .section-title,
+        .section-titles {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(233, 122, 48, 0.2);
+            border-radius: 5px;
+        }
+
+        /* Form elements */
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Center align the button */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background: white;
+            color: #6A5ACD;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #5C67F2;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo"> <span class="logo-symbol">⚒</span> Visual Spatial Intelligence</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="instructions.html">Instructions</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="section-title">NITTTR - SPATIAL VISUALIZATION QUESTIONNAIRE</div>
+
+        <form id="userForm">
+            <div class="section-titles">Personal Details</div>
+
+            <label for="name">Name *</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email *</label>
+            <input type="email" id="email" required>
+
+            <label for="dob">Date of Birth *</label>
+            <input type="date" id="dob" required>
+
+            <label for="age">Age *</label>
+            <select id="age" required>
+                <option value="">Choose</option>
+                <option value="Less than 15 years">Less than 15 years</option>
+                <option value="15 to 20 years">15 to 20 years</option>
+                <option value="21 to 25 years">21 to 25 years</option>
+                <option value="26 to 35 years">26 to 35 years</option>
+                <option value="36 to 45 years">36 to 45 years</option>
+                <option value="More than 45 years">More than 45 years</option>
+            </select>
+
+            <label for="gender">Gender *</label>
+            <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <div class="section-titles">Professional Details</div>
+
+            <label for="natureOfWork">Nature of Work *</label>
+            <select id="natureOfWork" required>
+                <option value="">Choose</option>
+                <option value="Academic professional">Academic professional</option>
+                <option value="Industry professional">Industry professional</option>
+                <option value="Student">Student</option>
+            </select>
+
+            <label for="institution">Institution Name *</label>
+            <input type="text" id="institution" required>
+
+            <label for="department">Department/Branch *</label>
+            <input type="text" id="department" required>
+
+            <label for="yearsExperience">Years of Experience *</label>
+            <select id="yearsExperience" required>
+                <option value="">Choose</option>
+                <option value="No working experience">No working experience</option>
+                <option value="1 to 5 years">1 to 5 years</option>
+                <option value="6 to 10 years">6 to 10 years</option>
+                <option value="11 to 15 years">11 to 15 years</option>
+                <option value="16 to 20 years">16 to 20 years</option>
+                <option value="More than 20 years">More than 20 years</option>
+            </select>
+
+            <label for="city">City of Institution *</label>
+            <input type="text" id="city" required>
+
+            <div class="btn-container">
+                <button type="submit" class="btn">Start Test</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("userForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const userData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        dob: document.getElementById("dob").value,
+        age: document.getElementById("age").value,
+        gender: document.getElementById("gender").value,
+        institution: document.getElementById("institution").value,
+        department: document.getElementById("department").value,
+        natureOfWork: document.getElementById("natureOfWork").value,
+        yearsExperience: document.getElementById("yearsExperience").value,
+        city: document.getElementById("city").value
+    };
+
+    fetch("http://localhost:8080/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Failed to save user data");
+        }
+        return response.json(); // Parse the response as JSON
+    })
+    .then(userId => {
+        alert("User data saved successfully!");
+        // Redirect to the GamePage with the userId as a query parameter
+        window.location.href = `/GamePage?userId=${userId}`; // Use the userId returned by the backend
+    })
+    .catch(error => {
+        alert(error.message); // Show an error message
+    });
+});
+    </script>
+
+</body>
+
+</html>

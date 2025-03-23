@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Entry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="user.js" defer></script>
+    <style>
+        /* Global Reset */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #DCD6F7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            background-color: #5C67F2;
+            color: white;
+        }
+
+        /* Container for both sections */
+        .container {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            height: 100vh;
+            width: 70%;
+            margin-top: 100px; /* ✅ Creates space below navbar */
+        }
+
+        /* Text Section */
+        .text-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* ✅ Align text to top-left */
+            align-items: flex-start; /* ✅ Align text to left */
+            height: 80%;
+            padding: 30px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            background-color: #6A5ACD;
+            color: white;
+        }
+
+        .text-section h1 {
+            margin: 10; /* ✅ Remove extra margin */
+            font-size: 50px; /* ✅ Keep heading size normal */
+            font-weight: bold;
+        }
+
+        .text-section p {
+            margin-top: 15px;
+            padding: auto;
+            font-size: 16px; /* ✅ Reduce font size of description */
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            margin-top: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .admin {
+            background: gray;
+            color: white;
+        }
+
+        .start {
+            background: white;
+            color: black;
+            border: 1px solid black;
+        }
+
+        /* Image Section */
+        img {
+            width: 50%;
+            height: 80%;
+            object-fit: cover; /* Ensures the cube fills the section */
+        }
+
+        /* Bottom Images */
+        .bottom-images {
+            position: absolute;
+            bottom: 70px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            opacity: 0.3;
+        }
+
+        .bottom-images img {
+            width: 100px;
+            height: auto;
+        }
+
+        /* Instructions Page */
+        .instructions-container {
+            width: 80%;
+            margin: 120px auto 0;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .instructions-container h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .instructions-container p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .instructions-container ol {
+            padding-left: 20px;
+        }
+
+        .instructions-container ol li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo"> <span class="logo-symbol">⚒</span> Visual Spatial Intelligence</div>
+        <ul class="nav-links">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/instructions">Instructions</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Page Container -->
+    <div class="container" id="home-page">
+        <div class="text-section">
+            <h1>NITTR-Visual Spatial Intelligence</h1>
+            <p>The Visual Spatial Intelligence Questionnaire consists of multiple-choice questions where participants are presented with a 3D object and its rotation.</p>
+            <div class="buttons">
+                <button class="btn admin" onclick="window.location.href='/admin-login'">Admin Role</button>
+                <button class="btn start" onclick="window.location.href='/start-game'">Start Test</button>
+            </div>
+        </div>
+        <img src="/images/3d-cube.jpg" alt="3D Cube">
+    </div>
+
+    <!-- Instructions Page Container -->
+    <div class="instructions-container" id="instructions-page" style="display: none;">
+        <h1>Instructions</h1>
+        <p>The Visual Spatial Intelligence Questionnaire consists of multiple-choice questions where you are presented with a 3D object and its rotation. The task involves determining how the object appears after being rotated according to a specified transformation. Each question typically includes:</p>
+        <ol>
+            <li><strong>A reference object:</strong> The initial position of a 3D geometric shape or structure.</li>
+            <li><strong>A rotation prompt:</strong> Instructions specifying the axis and degree of rotation (e.g., 90° clockwise around the vertical axis).</li>
+            <li><strong>Multiple answer choices:</strong> Visual representations of the object after the indicated rotation. You must select the correct option.</li>
+        </ol>
+    </div>
+
+    <!-- Bottom Images -->
+    <div class="bottom-images">
+        <img src="/images/images1.png" alt="Left Cube">
+        <img src="/images/images2.png" alt="Right Cube">
+    </div>
+
+    <script>
+        // Handle navigation between Home and Instructions pages
+        document.querySelector('.nav-links a[href="/"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('home-page').style.display = 'flex';
+            document.getElementById('instructions-page').style.display = 'none';
+        });
+
+        document.querySelector('.nav-links a[href="/instructions"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('home-page').style.display = 'none';
+            document.getElementById('instructions-page').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

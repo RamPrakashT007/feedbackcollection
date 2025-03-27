@@ -38,7 +38,7 @@ document.body.prepend(timerDisplay);
 
 // ✅ Function to fetch questions from the backend
 function fetchQuestions() {
-    fetch("http://localhost:8080/api/questions")
+    fetch("https://feedbackcollection-5wlz.onrender.com/api/questions")
         .then(response => response.json())
         .then(data => {
             questions = data;
@@ -51,7 +51,7 @@ function fetchQuestions() {
 
 // ✅ Fetch user's saved responses from the database
 function fetchUserResponses() {
-    fetch(`http://localhost:8080/api/user-responses?userId=${userId}`)
+    fetch(`https://feedbackcollection-5wlz.onrender.com/api/user-responses?userId=${userId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to fetch user responses");
@@ -65,7 +65,7 @@ function fetchUserResponses() {
             });
 
             // Fetch the saved current question index
-            fetch(`http://localhost:8080/users/${userId}`)
+            fetch(`https://feedbackcollection-5wlz.onrender.com/users/${userId}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error("Failed to fetch current question index");
@@ -133,7 +133,7 @@ function loadQuestion(index) {
         const questionId = questions[currentQuestionIndex].id;
 
         // Call the DELETE API to clear the response
-        fetch(`http://localhost:8080/api/clear-response?userId=${userId}&questionId=${questionId}`, {
+        fetch(`https://feedbackcollection-5wlz.onrender.com/api/clear-response?userId=${userId}&questionId=${questionId}`, {
             method: "DELETE"
         })
         .then(response => {
@@ -221,7 +221,7 @@ function handlePrevButtonClick() {
 }
 
 function saveCurrentQuestionIndex(currentQuestionIndex) {
-    fetch("http://localhost:8080/users/update-current-question-index", {
+    fetch("https://feedbackcollection-5wlz.onrender.com/users/update-current-question-index", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -306,7 +306,7 @@ function selectOption(questionId, selectedOption) {
 
 // ✅ Save response to backend
 function saveResponse(questionId, selectedOption, correctAnswer, timeTaken) {
-    fetch(`http://localhost:8080/api/save-response?userId=${userId}`, {
+    fetch(`https://feedbackcollection-5wlz.onrender.com/api/save-response?userId=${userId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

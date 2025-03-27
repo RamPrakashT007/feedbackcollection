@@ -19,7 +19,7 @@ import com.feedback.feedbackCollection.service.UserService;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "https://feedbackcollection-5wlz.onrender.com")
 public class UserController {
 
     @Autowired

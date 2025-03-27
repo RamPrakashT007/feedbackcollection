@@ -12,7 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:8080") // Replace with your frontend URL
+@CrossOrigin(origins = "https://feedbackcollection-5wlz.onrender.com") // Replace with your frontend URL
 @RestController
 @RequestMapping("/api")
 public class QuizSummaryController {

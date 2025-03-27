@@ -320,7 +320,7 @@ console.log("Stored Answer:", localStorage.getItem(`question_${question.id}_answ
 
 document.addEventListener("DOMContentLoaded", async function () {
     try {
-        const response = await fetch("http://localhost:8080/forms/1/questions");
+        const response = await fetch("https://feedbackcollection-5wlz.onrender.com/forms/1/questions");
         const data = await response.json();
 
         console.log("API Response:", data); // Check structure

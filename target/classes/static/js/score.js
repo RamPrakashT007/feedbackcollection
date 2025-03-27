@@ -22,7 +22,7 @@ function saveAdminData(userId, quizSummaryId) {
     }
 
     // First, check if the admin data already exists
-    fetch(`http://localhost:8080/api/check-admin-data?userId=${userId}&quizSummaryId=${quizSummaryId}`)
+    fetch(`https://feedbackcollection-5wlz.onrender.com/api/check-admin-data?userId=${userId}&quizSummaryId=${quizSummaryId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to check admin data");
@@ -45,7 +45,7 @@ function saveAdminData(userId, quizSummaryId) {
 }
 
 function saveAdminDataToBackend(userId, quizSummaryId) {
-    fetch("http://localhost:8080/api/save-admin-data", {
+    fetch("https://feedbackcollection-5wlz.onrender.com/api/save-admin-data", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

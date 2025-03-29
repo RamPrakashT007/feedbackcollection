@@ -6,6 +6,7 @@ let timerInterval; // To store the timer interval
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get('userId');
 
+
 if (!userId) {
     console.error("User ID is missing in the URL!");
     // Handle the error (e.g., redirect back to the user details page)

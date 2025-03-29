@@ -41,6 +41,7 @@ document.body.prepend(timerDisplay);
 function fetchQuestions() {
     fetch("https://feedbackcollection-5wlz.onrender.com/api/questions")
         .then(response => response.json())
+        
         .then(data => {
             questions = data;
             initializeTracker(questions.length);
